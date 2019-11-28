@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        double atlyginimas;
+
+        System.out.println("Atlyginimo skaičiavimo programa:");
+        System.out.println("Įveskite bazinį atlyginimą:");
+        Scanner S = new Scanner(System.in);
+        atlyginimas = S.nextDouble();
+
+        System.out.println("Įveskite darbuotojo atliktą normą: \"žemiau normos\", \"norma\" arba \"daugiau normos\":");
+        S.skip("\n");
+        String norma = S.nextLine();
+
+        if (norma.equals("žemiau normos")) {
+            atlyginimas *= 0.5;
+            System.out.println("Darbuotojo mėnesinis atlyginimas: " + atlyginimas);
+
+        } else if (norma.equals("norma")) {
+            System.out.println("Darbuotojo mėnesinis atlyginimas: " + atlyginimas);
+        } else if (norma.equals("aukščiau normos")) {
+            atlyginimas *= 1.5;
+            System.out.println("Darbuotojo mėnesinis atlyginimas: " + atlyginimas);
+        } else {
+            System.out.println("Įvestas neteisingas pasirinkimas");
+        }
+
+    }
+}

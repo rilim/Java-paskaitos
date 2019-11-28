@@ -1,0 +1,19 @@
+Praktika:
+1.1. Išvestinė klasė Statybininkas turi paveldėti bazinę klasę Zmogus.
+1.2. Sukurti 4 objektus išvestinės ir 4 objektus bazinės klasės.
+1.3. Sudėti objektus į sąrašą ir atspausdinti kiek uždirba statybininkai.
+
+
+2.1. Sukurti bazinę klasę Leidinys + interface + package:
+- rūšis; // (knygos, laikraščiai, žurnalai)
+- periodinis; // (true, false)
+- puslapių skaičius.
+
+2.2. Sukurti išvestinę klasę Knyga + interface + package:
+- pavadinimas;
+- kietais viršeliais; // (true, false)
+- tipas. // (mokomoji, grožinė, mokslinė, fantastinė, trileris..)
+
+2.3. Sukurti 5 išvestinės ir bazinės klasės objektų.
+
+2.4. Sudėti į sąrašą visus objektus ir atspausdinti išvestinės klasės objektus, kurių tipas 'grožinė' literatūra.

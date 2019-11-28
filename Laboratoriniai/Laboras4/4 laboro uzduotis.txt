@@ -1,0 +1,11 @@
+1. Sukurti bazinę klasę Transportas + interface + package:
+- tipas; // sausumos, oro, vandens
+- variklis; // true, false
+- pagaminimo metai.
+2. Sukurti išvestinę klasę Automobilis + interface + package:
+- markė;
+- durų skaičius;
+- varomas elektra. // (true, false)
+3. Sukurti 5 išvestinės ir 5 bazinės klasės objektus.
+4. Sudėti į sąrašą visus objektus ir atspausdinti išvestinės klasės objektus, kurie varomi elektra.
+5. UML (!)

@@ -1,0 +1,250 @@
+﻿//funkcijos, grąžinančios reikšmę, panaudojimas
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int skaicius1, skaicius2;
+
+        System.out.println("Įveskit pirmą skaičių:");
+        Scanner s = new Scanner(System.in);
+        skaicius1 = s.nextInt();
+        System.out.println("Įveskit antrą skaičių:");
+        skaicius2 = s.nextInt();
+
+        System.out.println("Daugybos rezultatas: " + skaicius1 + " * " + skaicius2 + " = " + dauginti(skaicius1, skaicius2));
+
+        }
+
+    /**
+     * Ši funkcija apskaičiuoja daugybą iš vartotojo įvestų dviejų skaitmenų
+     *
+     * @return grąžinamas daugybos rezultatas (int)
+     */
+        static int dauginti (int pirmas, int antras){
+        int rezultatas;
+        rezultatas = pirmas * antras;
+        return rezultatas;
+        }
+    }
+
+//Funkcijos su void panaudojimas
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int skaicius1, skaicius2;
+
+        System.out.println("Įveskit pirmą skaičių:");
+        Scanner s = new Scanner(System.in);
+        skaicius1 = s.nextInt();
+        System.out.println("Įveskit antrą skaičių:");
+        skaicius2 = s.nextInt();
+
+        System.out.println("Daugybos rezultatas: " + skaicius1 + " * " + skaicius2 + " = " + dauginti(skaicius1, skaicius2));
+        isvedimas();
+
+    }
+
+     /**
+     * Ši funkcija apskaičiuoja daugybą iš vartotojo įvestų dviejų skaitmenų
+     *
+     * @return grąžinamas daugybos rezultatas (int)
+     */
+    static int dauginti(int pirmas, int antras) {
+        int rezultatas;
+        rezultatas = pirmas * antras;
+        return rezultatas;
+    }
+
+	/**
+     * Funkcija išveda pranešimą apie darbo pabaigą
+     */
+    static void isvedimas() {
+        System.out.println("Darbo pabaiga");
+    }
+}
+
+//funkcija su void, padaryta prezentacijos metu
+import java.util.Scanner;
+public class Main {
+   public static void main(String[] args) {
+       bruksniuoti();
+       spausdinti("Skaiciu daugyba");
+       bruksniuoti();
+       double a, b; //vartotojo įvesti skaičiai
+       spausdinti("Įveskite pirmą skaičių.");
+       Scanner scanner = new Scanner(System.in);
+       a = scanner.nextDouble();
+       spausdinti("Įveskite antrą skaičių.");
+       b = scanner.nextDouble();
+       double c = dauginti(a, b);
+       spausdinti("Sandauga = ", c);
+       bruksniuoti();
+   }
+   /*
+   Funkcija skirta sudauginti du skaičius.
+   @param x, y - vartotojo įvedami skaičiai.
+   @return c - dviejų skaičių sandauga.
+    */
+   public static double dauginti(double x, double y) {
+       double c = x * y;
+       return c;
+   }
+   /*
+   spausdinsime vartotojui informacija
+   @param info - vartotojui perduodama informacija
+    */
+   public static void spausdinti(String info) {
+       System.out.println(info);
+   }
+    /*
+   spausdinsime vartotojui informacija ir rezultata
+   @param info - vartotojui perduodama informacija
+   @param rezultatas - dvieju skaiciu sandauga
+    */
+   public static void spausdinti(String info, double rezultatas) {
+       System.out.println(info + rezultatas);
+   }
+   public static void bruksniuoti() {
+       System.out.println("//////////");
+   }
+}
+
+
+
+//funkcija atlyginimo skaičiavimui
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        double atlyginimas;
+
+        spausdinti("Atlyginimo skaičiavimo programa:");
+        bruksniuoti();
+        spausdinti("Įveskite bazinį atlyginimą:");
+        Scanner S = new Scanner(System.in);
+        atlyginimas = S.nextDouble();
+
+        spausdinti("Įveskite darbuotojo atliktą normą: \"žemiau normos\", \"norma\" arba \"aukščiau normos\":");
+        S.skip("\n");
+        String norma = S.nextLine();
+        skaiciuotiAtlyginima(atlyginimas, norma);
+    }
+
+    /**
+     * Ši funkcija apskaičiuoja darbuotojo atlyginimą pagal įvestą bazinę algą
+     *
+     * @param alga darbuotojo bazinis atlyginimas
+     * @param norm
+     * @return išvedama tiksli informacija pagal įvestą bazinį atlyginimą (void)
+     */
+    static void skaiciuotiAtlyginima(double alga, String norm) {
+            if (norm.equals("žemiau normos")) {
+                alga *= 0.5;
+                spausdinti("Darbuotojo mėnesinis atlyginimas: " + alga);
+            } else if (norm.equals("norma")) {
+                spausdinti("Darbuotojo mėnesinis atlyginimas: " + alga);
+            } else if (norm.equals("aukščiau normos")) {
+                alga *= 1.5;
+                spausdinti("Darbuotojo mėnesinis atlyginimas: " + alga);
+            } else {
+                spausdinti("Įvestas neteisingas pasirinkimas");
+            }
+        }
+    /**
+     * Vartotojui spausdinama informacija
+     *
+     * @param info - vartotojui perduodama informacija
+     */
+    public static void spausdinti(String info) {
+        System.out.println(info);
+    }
+
+
+    public static void bruksniuoti() {
+        System.out.println("-----------------------");
+    }
+
+}
+
+
+//varžtai su daugiau funkcijų
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        double atlyginimas;
+
+        spausdinti("Atlyginimo skaičiavimo programa:");
+        bruksniuoti();
+        spausdinti("Įveskite bazinį atlyginimą:");
+        Scanner S = new Scanner(System.in);
+        atlyginimas = S.nextDouble();
+
+        spausdinti("Įveskite darbuotojo atliktą normą: \"žemiau normos\", \"norma\" arba \"aukščiau normos\":");
+        double norma = suteiktiKoeficienta();
+        skaiciuotiAtlyginima(atlyginimas, norma);
+    }
+
+    static double suteiktiKoeficienta(){
+        Scanner S = new Scanner(System.in);
+        String norma = S.nextLine();
+        double koeficientas = 0;
+
+        if (norma.equals("žemiau normos")){
+            koeficientas = 0.5;
+        } else if(norma.equals("norma")){
+            koeficientas = 1;
+        } else if (norma.equals("aukščiau normos")){
+            koeficientas = 1.5;
+        } else {
+            spausdinti("Įvestas neteisingas pasirinkimas");
+        }
+        return koeficientas;
+    }
+
+    /**
+     * Ši funkcija apskaičiuoja darbuotojo atlyginimą pagal įvestą bazinę algą ir koeficientą
+     *
+     * @param alga darbuotojo bazinis atlyginimas
+     * @param norma darbuotojo koeficientas
+     * @return išvedama galutinis atlyginimą (void)
+     */
+    static void skaiciuotiAtlyginima(double alga, double norma) {
+                alga *= norma;
+                spausdinti(alga);
+        }
+    /**
+     * Vartotojui spausdinama informacija
+     *
+     * @param info - vartotojui perduodama informacija
+     */
+    public static void spausdinti(String info) {
+        System.out.println(info);
+    }
+
+    /**
+     * Vartotojui spausdinama informacija
+     *
+     * @param atl - vartotojui spausdinamas jo galutinis atlyginimas
+     */
+    public static void spausdinti(double atl) {
+        System.out.println(atl);
+    }
+
+    /**
+     * išveda liniją į ekraną
+     */
+    public static void bruksniuoti() {
+        System.out.println("-----------------------");
+    }
+
+}
+
+

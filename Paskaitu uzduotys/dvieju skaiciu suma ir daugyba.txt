@@ -1,0 +1,194 @@
+import java.util.Scanner;
+
+public class DviejuSkaiciuSuma {
+
+    public static void main(String[] args){
+        int sk1, sk2, suma;
+
+        System.out.println("Sumos skaičiavimas" + "\n" + "Įveskite pirmą skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk1 = S.nextInt();
+        System.out.println("Įveskite antrą skaičių:");
+        sk2 = S.nextInt();
+        suma = sk1 + sk2;
+        System.out.println(sk1 + " + " + sk2 + " = " + suma);
+    }
+}
+
+//Tūpokas būdas daugybai
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int sk;
+
+        System.out.println("Įveskite skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk = S.nextInt();
+
+        System.out.println(sk + " * " + 1 + " = " + sk * 1 + "\n" +
+                sk + " * " + 2 + " = " + sk * 2 + "\n" +
+                sk + " * " + 3 + " = " + sk * 3 + "\n" +
+                sk + " * " + 4 + " = " + sk * 4 + "\n" +
+                sk + " * " + 5 + " = " + sk * 5 + "\n" +
+                sk + " * " + 6 + " = " + sk * 6 + "\n" +
+                sk + " * " + 7 + " = " + sk * 7 + "\n" +
+                sk + " * " + 8 + " = " + sk * 8 + "\n" +
+                sk + " * " + 9 + " = " + sk * 9);
+    }
+}
+
+
+// Daugyba naudojant for ciklą
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int sk;
+
+        System.out.println("Įveskite skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk = S.nextInt();
+
+        for(int i = 1; i <10; i++) {
+            System.out.println(sk + " * " + i + " = " + sk * i);
+        }
+
+    }
+}
+
+
+//Daugyba naudojant while ciklą
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int sk;
+
+        System.out.println("Įveskite skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk = S.nextInt();
+
+        int i = 1;
+        while(i < 10) {
+            System.out.println(sk + " * " + i + " = " + sk * i);
+            i++;
+        }
+
+    }
+}
+
+
+//Daugybos rezultato palyginimas su 50
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int sk;
+
+        System.out.println("Įveskite skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk = S.nextInt();
+
+        for(int i = 1; i <10; i++) {
+            int rezultatas = sk * i;
+
+            if(rezultatas < 50){
+                System.out.println(sk + " * " + i + " = " + rezultatas + " <50");
+            } else if (rezultatas == 50){
+                System.out.println(sk + " * " + i + " = " + rezultatas + " ==50");
+            } else{
+                System.out.println(sk + " * " + i + " = " + rezultatas + " >50");
+            }
+
+        }
+
+    }
+}
+
+
+//Daugyba/dalyba su String
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int sk;
+
+        System.out.println("Įveskite skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk = S.nextInt();
+
+        System.out.println("Įveskite žvaigždutę, jei norite sudauginti arba /, jei norite dalybos:");
+        String veiksmas = S.next();
+
+        if(veiksmas.equals("*")){
+            for(int i = 1; i <10; i++) {
+                System.out.println(sk + " * " + i + " = " + sk * i);
+            }
+        } else {
+            for(int i = 1; i <10; i++) {
+		double dalybosRezultatas = (double) sk / i;
+                System.out.println(sk + " / " + i + " = " + dalybosRezultatas);
+            }
+            }
+        }
+    }
+
+
+//Daugyba/dalyba su char
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int sk;
+
+        System.out.println("Įveskite skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk = S.nextInt();
+
+        System.out.println("Įveskite žvaigždutę, jei norite sudauginti arba /, jei norite dalybos:");
+        char veiksmas = S.next().charAt(0);
+
+        if(veiksmas == '*'){
+            for(int i = 1; i <10; i++) {
+                System.out.println(sk + " * " + i + " = " + sk * i);
+            }
+        } else {
+            for(int i = 1; i <10; i++) {
+                double dalybosRezultatas = (double) sk / i;
+                System.out.println(sk + " / " + i + " = " + dalybosRezultatas);
+            }
+        }
+    }
+}
+
+
+
+//Atliekama daugyba, kol jos rezultatas neviršija 50
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int sk;
+
+        System.out.println("Įveskite skaičių:");
+        Scanner S = new Scanner(System.in);
+        sk = S.nextInt();
+
+        for(int i = 1; i <10; i++) {
+            int rezultatas = sk * i;
+            
+            if(rezultatas > 50){
+                break;
+            }
+            System.out.println(sk + " * " + i + " = " + rezultatas);
+        }
+    }
+}

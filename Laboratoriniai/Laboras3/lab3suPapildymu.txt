@@ -1,0 +1,157 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int[] masyvas = {15, -40, 16, 13, -19, 19, 26, 42, 13, 76};
+
+        spausdintiMasyva(masyvas); //Atspausdinamas masyvas toks koks yra
+        skaiciuotiLyginiuElementuVidurki(masyvas); //Atspausdinamas masyvo lyginių elementų vidurkis
+
+        /*Masyve masyvoMin išsaugomos dvi reikšmės, gautos iš funkcijos. Pirmas elementas tai mažiausios reikšmės indeksas pagrindiniam masyve,
+         * o antrasis elementas - tai pati reikšmė (mažiausia)*/
+        int[] masyvoMin = rastiMaziausia(masyvas);
+        System.out.println("Masyvo minimali reikšmė: " + masyvoMin[1] + ", šios reikšmės indeksas: " + masyvoMin[0]);
+
+        /*Masyve masyvoMax išsaugomos dvi reikšmės, gautos iš funkcijos. Pirmas elementas tai didžiausios reikšmės indeksas pagrindiniam masyve,
+         * o antrasis elementas - tai pati reikšmė (didžiausia)*/
+        int[] masyvoMax = rastiDidziausia(masyvas);
+        System.out.println("Masyvo maksimali reikšmė: " + masyvoMax[1] + ", šios reikšmės indeksas: " + masyvoMax[0]);
+
+        /*Atspausdinamas masyvas, kuriame sukeista vietomis min ir max reikšmės*/
+        sukeistiReiksmes(masyvas);
+
+        /*Atspausdinamas didžiausias teigiamas, nelyginis masyvo skaičius*/
+        rastiDidziausiaIsNelyginiu(masyvas);
+    }
+
+    /**
+     * Funkcija, kuri suranda ir atspausdina didžiausią teigiamą nelyginį masyvo skaičių
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     */
+    static void rastiDidziausiaIsNelyginiu(int[] mas){
+        int didziausiasNelyginis = 0;
+        for (int i = 0; i < mas.length; i++) {
+            if((mas[i] % 2 != 0) & (mas[i] > didziausiasNelyginis)){
+                didziausiasNelyginis = mas[i];
+            }
+        }
+        System.out.println("\n" + "Didžiausias nelyginis teigiamas masyvo skaičius: " + didziausiasNelyginis);
+    }
+
+    /**
+     * Funkcija atspausdinanti masyvą
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     */
+    static void spausdintiMasyva(int[] mas) {
+        for (int i = 0; i < mas.length; i++) {
+            System.out.print(mas[i] + " ");
+        }
+    }
+
+    /**
+     * Funkcija, kuri išrenka masyvo lyginius skaičius ir apskaičiuoja jų sumą
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     * @return masyvo lyginių skaičių suma
+     */
+    static int skaiciuotiLyginiuElementuSuma(int[] mas) {
+        int suma = 0;
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] % 2 == 0) {
+                suma += mas[i];
+            }
+        }
+        return suma;
+    }
+
+    /**
+     * Funkcija suskaičiuojanti kiek lyginių elementų turi masyvas
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     * @return masyvo lyginių skaičių kiekis
+     */
+    static int skaiciuotiLyginiuElementuKieki(int[] mas) {
+        int kiekis = 0;
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] % 2 == 0)
+                kiekis++;
+        }
+        return kiekis;
+    }
+
+    /**
+     * Funkcija apskaičiuojanti masyvo lyginių skaičių vidurkį.
+     * Šioje funkcijoje iškviečiamos lyginių elementų sumos ir lyginių elementų kiekio funkcijos
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     */
+    static void skaiciuotiLyginiuElementuVidurki(int[] mas) {
+        double vidurkis = (double) skaiciuotiLyginiuElementuSuma(mas) / skaiciuotiLyginiuElementuKieki(mas);
+        System.out.println("\n" + "Masyvo lyginių elementų vidurkis: " + vidurkis);
+    }
+
+    /**
+     * Funkcija, kuri suranda didžiausią reikšmę masyve. Šią reikšmę ir jos indeksą išsaugo naujame, dviejų elementų masyve maxMasyvas.
+     * Kuriame pirmoji reikšmė - didžiausios reikšmės vieta pagrindiniame masyve (indeksas), antroji reikšmė - rastoji didžiausia reikšmė.
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     * @return grąžinamas dviejų elementų masyvas
+     */
+    static int[] rastiDidziausia(int[] mas) {
+        int max = 0; //didžiausia reikšmė
+        int indeksas = 0;
+
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > max) {
+                max = mas[i];
+                indeksas = i;
+            }
+        }
+        int[] maxMasyvas = {indeksas, max};
+        return maxMasyvas;
+    }
+
+    /**
+     * Funkcija, kuri suranda mažiausią reikšmę masyve. Šią reikšmę ir jos indeksą išsaugo naujame, dviejų elementų masyve minMasyvas.
+     * Kuriame pirmoji reikšmė - mažiausios reikšmės vieta pagrindiniame masyve (indeksas), antroji reikšmė - rastoji mažiausia reikšmė.
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     * @return grąžinamas dviejų elementų masyvas
+     */
+    static int[] rastiMaziausia(int[] mas) {
+        int min = 0; //minimali reikšmė
+        int indeksas = 0;
+
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] < min) {
+                min = mas[i];
+                indeksas = i;
+            }
+        }
+        int[] minMasyvas = {indeksas, min};
+        return minMasyvas;
+    }
+
+    /**
+     * Funkcija, kurioje vietomis sukeičiamos mažiausia ir didžiausia, pagrindinio masyvo, reikšmės.
+     *
+     * @param mas masyvas sukurtas main funkcijoje
+     */
+    static void sukeistiReiksmes(int[] mas) {
+        int[] maziausiaReiksme = rastiMaziausia(mas);
+        int[] didziausiaReiksme = rastiDidziausia(mas);
+
+        for (int i = 0; i < mas.length; i++) {
+            if (i == maziausiaReiksme[0]) {
+                mas[i] = didziausiaReiksme[1];
+            } else if (i == didziausiaReiksme[0]) {
+                mas[i] = maziausiaReiksme[1];
+            }
+        }
+        System.out.println("Masyvas sukeistomis reikšmėmis: ");
+        spausdintiMasyva(mas);
+    }
+}

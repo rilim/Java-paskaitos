@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int skaicius1, skaicius2;
+        String veiksmas;
+        String testi = "t";
+
+
+        while (testi.equals("t")) {
+            String pasirinkimas = ""; //Po kiekvienos operacijos pasirenkama ar tęsti skaičiavimus toliau
+            System.out.println("Įveskite pirmą skaičių:");
+            Scanner S = new Scanner(System.in);
+            skaicius1 = S.nextInt(); //Įvedamas pirmas skaičius
+            System.out.println("Įveskite kokį veiksmą norite atlikti: \"*\" jei daugybą; \"/\" jei dalybą; \"+\" jei sudėtį ir \"-\" jei atimtį:");
+            veiksmas = S.next(); //Pasirenkama operacija
+            System.out.println("Įveskite antrą skaičių:");
+            skaicius2 = S.nextInt(); //Įvedamas antras skaičius
+
+            int rezultatas; //Pasirinktos operacijos rezultatas
+            if (veiksmas.equals("*")) { //Atliekami veiksmai pasirinkus daugybą
+                rezultatas = skaicius1 * skaicius2;
+                System.out.println(skaicius1 + " * " + skaicius2 + " = " + rezultatas);
+            } else if (veiksmas.equals("/")) { //Atliekami veiksmai pasirinkus dalybą
+                if (skaicius2 == 0) { // Pasirinkus dalybą ir antrą skaičių įvedus 0, išvedamas pranešimas, jog dalyba iš nulio negalima ir klausiama ar nori tęsti
+                    System.out.println("Dalyba iš nulio negalima");
+                } else { //Jei antras skaičius dalyboje nėra nulis, tai atliekama dalyba
+                    double dalybosRezultatas = (double) skaicius1 / skaicius2; //int tipas konvertuojamas į double
+                    System.out.println(skaicius1 + " / " + skaicius2 + " = " + dalybosRezultatas);
+                }
+            } else if (veiksmas.equals("+")) { //Atliekami veiksmai pasirinkus sudėtį
+                rezultatas = skaicius1 + skaicius2;
+                System.out.println(skaicius1 + " + " + skaicius2 + " = " + rezultatas);
+            } else if (veiksmas.equals("-")) { //Atliekami veiksmai pasirinkus atimtį
+                rezultatas = skaicius1 - skaicius2;
+                System.out.println(skaicius1 + " + " + skaicius2 + " = " + rezultatas);
+            } else if (veiksmas.equals("?")) { //Atliekami veiksmai įvedus klaustuką
+                for (int i = 9; i < 100; i++) {
+                    double opRezultatas = (double) (skaicius1 + skaicius2) / i - (skaicius1 - skaicius2);
+                    if (opRezultatas < 0.25) {
+                        System.out.println("(" + skaicius1 + " + " + skaicius2 + ")" + "/" + i + " - " + "(" + skaicius1 + " + " + skaicius2 + ")" + " = " + opRezultatas + " < 0.25");
+                    } else if (opRezultatas == 0.25) {
+                        System.out.println("(" + skaicius1 + " + " + skaicius2 + ")" + "/" + i + " - " + "(" + skaicius1 + " + " + skaicius2 + ")" + " = " + opRezultatas + " == 0.25");
+                    } else {
+                        System.out.println("(" + skaicius1 + " + " + skaicius2 + ")" + "/" + i + " - " + "(" + skaicius1 + " + " + skaicius2 + ")" + " = " + opRezultatas + " > 0.25");
+                    }
+                }
+            }else
+                { //Jei įvedamas netinkamas operacijos ženklas, išvedamas pranešimas, jog tai negalima operacija ir klausiama ar tęsti toliau
+                    System.out.println("Operacija negalima");
+                }
+                System.out.println("Jei norite tęsti, spauskite \"t\", jei ne - spauskite \"n\"");
+                    while (!pasirinkimas.equals("t")) {
+                        pasirinkimas = S.next();
+                        if (pasirinkimas.equals("t")) {
+                            testi = "t";
+                        } else if (pasirinkimas.equals("n")) {
+                            testi = "n";
+                            System.out.println("Darbas baigtas.");
+                        } else {
+                            pasirinkimas = pasirinkimas;
+                            System.out.println("Įvestas neteisingas pasirinkimas, veskite tik \"t\" arba \"n\"");
+                        }
+                    }
+            }
+        }
+    }

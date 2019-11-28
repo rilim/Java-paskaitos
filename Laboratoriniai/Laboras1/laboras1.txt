@@ -1,0 +1,77 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int skaicius1, skaicius2;
+        String veiksmas;
+        String testi = "t";
+
+        while (testi.equals("t")) {
+            System.out.println("Įveskite pirmą skaičių:");
+            Scanner S = new Scanner(System.in);
+            skaicius1 = S.nextInt();
+            System.out.println("Įveskite kokį veiksmą norite atlikti: \"*\" jei daugybą; \"/\" jei dalybą; \"+\" jei sudėtį ir \"-\" jei atimtį:");
+            veiksmas = S.next();
+            System.out.println("Įveskite antrą skaičių:");
+            skaicius2 = S.nextInt();
+
+            int rezultatas;
+            if (veiksmas.equals("*")) {
+                rezultatas = skaicius1 * skaicius2;
+                System.out.println(skaicius1 + " * " + skaicius2 + " = " + rezultatas);
+                testi = arTesti();
+            } else if (veiksmas.equals("/")) {
+                if (skaicius2 == 0) {
+                    System.out.println("Dalyba iš nulio negalima");
+                    testi = arTesti();
+                } else {
+                    double dalybosRezultatas = (double) skaicius1 / skaicius2;
+                    System.out.println(skaicius1 + " / " + skaicius2 + " = " + dalybosRezultatas);
+                    testi = arTesti();
+                }
+            } else if (veiksmas.equals("+")) {
+                rezultatas = skaicius1 + skaicius2;
+                System.out.println(skaicius1 + " + " + skaicius2 + " = " + rezultatas);
+                testi = arTesti();
+            } else if (veiksmas.equals("-")) {
+                rezultatas = skaicius1 - skaicius2;
+                System.out.println(skaicius1 + " + " + skaicius2 + " = " + rezultatas);
+                testi = arTesti();
+            } else {
+                System.out.println("Operacija negalima");
+                testi = arTesti();
+            }
+        }
+
+    }
+
+    /**
+     * Ši funkcija paklausia vartotojo ar jis nori tęsti atlikus pasirinktą veiksmą.
+     * Jei vartotojas įveda kažką kito nei "t" ar "n" jis dar kartą paprašomas įrašyti pasirinkimą
+     *
+     * @return vartotojo pasirinkimas, kuris paskui priskiriamas kintamajam "veiksmas" (String)
+     */
+    public static String arTesti() {
+        String test = "";
+        String pasirinkimas = "";
+        System.out.println("Jei norite tęsti, spauskite \"t\", jei ne - spauskite \"n\"");
+
+        while (!pasirinkimas.equals("t")) {
+            Scanner S = new Scanner(System.in);
+            test = S.next();
+            if (test.equals("t")) {
+                pasirinkimas = "t";
+            } else if (test.equals("n")) {
+                pasirinkimas = "n";
+                System.out.println("Darbas baigtas.");
+            } else {
+                pasirinkimas = test;
+                System.out.println("Įvestas neteisingas pasirinkimas, veskite tik \"t\" arba \"n\"");
+            }
+        }
+        return pasirinkimas;
+    }
+}
