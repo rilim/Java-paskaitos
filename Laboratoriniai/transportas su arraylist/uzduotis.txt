@@ -1,0 +1,5 @@
+Sukurti 10 automobilio objektų ir sudėti juos į pasirinktą masyvą:
+- atspausdinti (naudojant iteratorius ir paprastai) vartotojui į ekraną informaciją apie automobilius;
+- pašalinti iš masyvo automobilius, kurių rida daugiau nei 500000;
+- surūšiuoti automobilius pagal markę, jeigu markė vienoda - pagal metus, jeigu metai vienodi - pagal durų skaičių.
+- spausdinti masyvą prieš pakeitimus ir po.
