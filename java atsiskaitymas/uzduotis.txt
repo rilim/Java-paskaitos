@@ -1,0 +1,11 @@
+1. Kiekvienas rinkimuose dalyvaujantis balsuotojas turi:
+	vardą;
+	pavardę;
+	gimimo metus;
+	apygardą;
+	tautybę.
+2. Rinkimuose dalyvauja 10 rinkėjų, su skirtingomis tautybėmis, skirtingose apygardose ir skirtingais gimimo metais.
+3. Atspausdinti visus balsuotojus vartotojui į ekraną.
+4. Suteikti galimybę vartotojui rasti konkrečios apygardos balsuotojų skaičių, panaudojant funkciją 'int gautiApygardosBalsuotojus(List balsuotojai, String apygarda)'.
+5. Surikiuoti ir atspausdinti balsuotojus pagal gimimo metus nuo vyriausio iki jauniausio.
+6. Pašalinti iš sąrašo tuos balsuotojus, kurių tautybė lenkas. Atspausdinti pakeistą sąrašą.
